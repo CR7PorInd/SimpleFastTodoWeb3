@@ -1,0 +1,63 @@
+<html>
+<head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <title>ToDo Application - User</title>
+</head>
+<body style="color: blue;">
+<nav class="blue">
+    <div class="nav-wrapper">
+      <a href="/" class="brand-logo">&nbsp;&nbsp;SF Todo</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li aria-disabled="true" class="active text-darken-2"><a>Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="javascript:want_to_logout()">Logout</a></li>
+      </ul>
+    </div>
+</nav>
+<p>{{message}}</p>
+{% if todo_list != {} %}
+{% for todo in todo_list.values() %}
+<br>
+<br>
+<div class="striped" style="border 1px solid black;">
+  <br>
+  <p class="lead" style="color: blue;">&nbsp;{{todo[1]}}: {{todo[2]}}</p>
+  &nbsp;<a class="btn-primary btn" href="/delete/{{todo[0]}}">Delete</a>
+  <br />
+  <br />
+  &nbsp;<a class="btn btn-success" href="/update/{{todo[0]}}">Update</a>
+  <br>
+</div>
+<br>
+{% endfor %}
+{% endif %}
+<div>
+    <form class="col s12" action="/add" method="post">
+      <div class="row">
+        <div class="input-field col s3">
+         &nbsp; <input placeholder="   Title here..." id="title" name="title" type="text" aria-label="Enter Todo Title:" required>
+        </div>
+        <div class="input-field">
+          &nbsp; <input placeholder="   Not Completed, Completed or In Progress only allowed here." name="status" required>
+        </div>
+        <div>
+          &nbsp;<button type="submit" value="Create Todo" class="btn btn-success">Create Todo <i class="material-icons right">send</i></button>
+        </div>
+      </div>
+    </form>
+  </div>
+<script type="text/javascript">
+  function want_to_logout()
+  {
+  var wantsToLogout = confirm("Do you want to Logout?");
+  if (wantsToLogout == true)
+  {
+  window.location.href='/logout';
+  }
+  }
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>

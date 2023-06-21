@@ -1,0 +1,8 @@
+Version: 3.0.1
+
+1. New APK without signup
+2. Better HTML Testing
+3. More Beautiful Design
+4. Better Backend Failure Management
+5. Fixed Many Bugs
+6. Restart Database

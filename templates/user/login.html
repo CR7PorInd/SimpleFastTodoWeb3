@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <title>Login to ToDo App - User</title>
+</head>
+<body style="align-items:center; color: #0000FF;">
+<div class="row">
+    <form class="col s12 form-signin" action="/login" method="post">
+      <div class="row">
+        <div class="input-field">
+          <input placeholder="Username" id="usr" name="usr" type="text" aria-label="Username:" class="sr-only" required>
+        </div>
+          <br>
+        <div class="input-field">
+          <input id="pwd" type="password" name="pwd" aria-label="Password: " placeholder="Password" class="sr-only" required>
+        </div>
+          <br>
+        <div>
+          <input type="submit" value="Login" class="btn btn-success sr-only"/>
+        </div>
+      </div>
+    </form>
+  </div>
+&nbsp;&nbsp;<a class="btn btn-primary" href="/">Home</a>
+<p>&nbsp;{{message}}</p>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>
